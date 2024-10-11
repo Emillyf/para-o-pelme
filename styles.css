@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #00aaff, #0077cc);
+    position: relative;
+}
+
+.margem {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 20px; /* Tamanho da fonte */
+    text-align: center;
+    width: 100%;
+}
+
+.cima {
+    top: 20px; /* Ajusta a posição do texto na parte superior */
+}
+
+.baixo {
+    bottom: 20px; /* Ajusta a posição do texto na parte inferior */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coracao {
+    position: relative;
+    width: 150px; /* Tamanho do coração */
+    height: 150px; /* Tamanho do coração */
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: batimento 0.5s infinite alternate;
+    display: block; /* Faz o link ocupar espaço */
+    transition: transform 0.5s ease; /* Transição suave */
+}
+
+.coracao::before,
+.coracao::after {
+    content: '';
+    position: absolute;
+    width: 150px; /* Ajusta o tamanho das partes do coração */
+    height: 150px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.coracao::before {
+    top: -75px; /* Ajusta a posição */
+    left: 0;
+}
+
+.coracao::after {
+    left: 75px; /* Ajusta a posição */
+    top: 0;
+}
+
+@keyframes batimento {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+    100% {
+        transform: scale(1.1) rotate(-45deg);
+    }
+}
+
+.coracao:hover {
+    transform: rotate(360deg); /* Gira 360 graus ao passar o mouse */
+}
